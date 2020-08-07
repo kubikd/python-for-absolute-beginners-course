@@ -1,26 +1,26 @@
 import random
 
+
 def main():
     show_header
 
-    player = "You"
+    player = "Dan"
     ai = "Computer"
 
     play_game(player, ai)
+
 
 def show_header():
     print("--------------------------------------------------")
     print("            Rock paper Scissors v1")
     print("--------------------------------------------------")
 
+
 def play_game(player_1, player_2):
 
     rolls = ['rock', 'paper', 'scissors']
 
-    roll1 = input(f"{player_1}, what is your roll? rock, paper, or scissors?: ")
-    roll1 = roll1.lower().strip()
-    if roll1 not in rolls:
-        print(f"Sorry {player_1}, {roll1} is not a valid play!")
+    roll1 = get_roll(player_1, rolls)
 
     roll2 = random.choice(rolls)
 
@@ -53,3 +53,16 @@ def play_game(player_1, player_2):
         print("It was a tie!")
     else:
         print(f'{winner} takes the game!')
+
+
+def get_roll(player_name, rolls):
+    roll = input(f"{player_name}, what is your roll? rock, paper, or scissors?: ")
+    roll = roll.lower().strip()
+    if roll not in rolls:
+        print(f"Sorry {player_name}, {roll} is not a valid play!")
+        return none
+    
+    return roll
+
+if __name__ == "__main__":
+        main()
