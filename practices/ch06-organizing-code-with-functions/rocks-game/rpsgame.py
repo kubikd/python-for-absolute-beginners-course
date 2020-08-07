@@ -21,8 +21,11 @@ def play_game(player_1, player_2):
     rolls = ['rock', 'paper', 'scissors']
 
     roll1 = get_roll(player_1, rolls)
-
     roll2 = random.choice(rolls)
+
+    if not roll1:
+        print("That is not a valid play.  Exiting")
+        return
 
     print(f"{player_1} roll {roll1}")
     print(f"{player_2} rolls {roll2}")
@@ -56,13 +59,14 @@ def play_game(player_1, player_2):
 
 
 def get_roll(player_name, rolls):
-    roll = input(f"{player_name}, what is your roll? rock, paper, or scissors?: ")
+    roll = input(
+        f"{player_name}, what is your roll? rock, paper, or scissors?: ")
     roll = roll.lower().strip()
     if roll not in rolls:
         print(f"Sorry {player_name}, {roll} is not a valid play!")
-        return none
-    
+        return None
     return roll
 
+
 if __name__ == "__main__":
-        main()
+    main()
