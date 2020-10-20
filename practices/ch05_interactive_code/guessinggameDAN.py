@@ -25,7 +25,6 @@ while attempts < attempt_limit:
     else:
         print("That's too HIGH!")
 
-
 print(f"The number of M&Ms is {mm_count}")
 print(f"You guessed the number of M&Ms in {attempts} tries!")
 
